@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+
+@import "swiper/swiper.min.css";
+@import "swiper/components/effect-fade/effect-fade.min.css";
+@import "swiper/components/pagination/pagination.min.css";
+@import "swiper/components/navigation/navigation.min.css";
+
+@tailwind base;
+@tailwind components;
+.social {
+  @apply items-center mr-4 text-gray-800 w-6 h-6 sm:w-8 sm:h-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-150;
+}
+@tailwind utilities;
+
+@layer utilities {
+  body {
+    background: #ffe8d1;
+  }
+}
+
+
+:root {
+  --swiper-theme-color: #d6985b;
+  --swiper-navigation-size: 30px;
+}
