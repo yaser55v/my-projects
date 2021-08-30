@@ -1,20 +1,20 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { graphql, useStaticQuery } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import SwiperCore, {
   Navigation,
   Pagination,
   EffectFade,
   Parallax,
-  Autoplay
-} from "swiper/core";
+  Autoplay,
+} from "swiper/core"
 
-SwiperCore.use([Navigation, Pagination, EffectFade, Parallax, Autoplay]);
+SwiperCore.use([Navigation, Pagination, EffectFade, Parallax, Autoplay])
 const Projects = () => {
-  const data = useStaticQuery(query);
-  const projects = data.allContentfulProject.nodes;
+  const data = useStaticQuery(query)
+  const projects = data.allContentfulProject.nodes
   return (
     <>
       <div id="projects" className="font-body">
@@ -55,7 +55,7 @@ const Projects = () => {
               className="mySwiper"
               style={{ height: "40rem" }}
             >
-              {projects.map((project) => {
+              {projects.map(project => {
                 const {
                   id,
                   title,
@@ -63,7 +63,7 @@ const Projects = () => {
                   link,
                   content: { tags },
                   description: { description },
-                } = project;
+                } = project
 
                 return (
                   <SwiperSlide key={id}>
@@ -106,7 +106,7 @@ const Projects = () => {
                                     >
                                       {tag}
                                     </li>
-                                  );
+                                  )
                                 })}
                               </ul>
                               <a
@@ -130,7 +130,7 @@ const Projects = () => {
                                   image={image.gatsbyImageData}
                                   alt=""
                                   objectFit="fill"
-                                  style={{height: '22rem'}}
+                                  style={{ height: "22rem" }}
                                   className="object-contain rounded w-full shadow-md"
                                 />
                               </a>
@@ -140,21 +140,21 @@ const Projects = () => {
                       </div>
                     </div>
                   </SwiperSlide>
-                );
+                )
               })}
             </Swiper>
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
 
 const query = graphql`
   {
-    allContentfulProject(sort: {fields: contentful_id, order: DESC}) {
+    allContentfulProject(sort: { fields: contentful_id, order: ASC }) {
       nodes {
         id
         title
@@ -171,4 +171,4 @@ const query = graphql`
       }
     }
   }
-`;
+`
