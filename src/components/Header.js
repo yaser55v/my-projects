@@ -1,8 +1,7 @@
 import React from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
-import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa"
+import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
 import { FcStatistics, FcAbout, FcCustomerSupport } from "react-icons/fc"
-import { SiUpwork } from "react-icons/si"
 import Bounce from "react-reveal/Bounce"
 import Zoom from "react-reveal/Zoom"
 const Header = () => {
@@ -47,13 +46,12 @@ const Header = () => {
                   <FaTwitter className="social hover:text-twitter" />
                 </a>
                 <a
-                  href="https://www.upwork.com/freelancers/~017cbda16d97800889"
+                  href="https://github.com/yaser55v"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <SiUpwork className="social hover:text-upwork" />
+                  <FaGithub className="social hover:text-github" />
                 </a>
-               
               </div>
             </Zoom>
           </div>
