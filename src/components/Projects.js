@@ -154,7 +154,7 @@ export default Projects
 
 const query = graphql`
   {
-    allContentfulProject(sort: { fields: contentful_id, order: ASC }) {
+    allContentfulProject(sort: { fields: contentful_id }) {
       nodes {
         id
         title
