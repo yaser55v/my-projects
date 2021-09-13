@@ -144,6 +144,7 @@ const Projects = () => {
               })}
             </Swiper>
           </div>
+    {/*       <button>butoon x</button> */}
         </div>
       </div>
     </>
@@ -154,7 +155,7 @@ export default Projects
 
 const query = graphql`
   {
-    allContentfulProject(sort: { fields: contentful_id ,order: DESC}}) {
+    allContentfulProject(sort: {fields: idx, order: DESC})  {
       nodes {
         id
         title

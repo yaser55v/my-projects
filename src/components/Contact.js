@@ -1,6 +1,6 @@
 import React from "react"
-import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa"
-import { SiUpwork } from "react-icons/si"
+import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
+
 import Img from "../assets/images/contact.jpg"
 
 const Contact = () => {
@@ -68,12 +68,12 @@ const Contact = () => {
                     <FaTwitter className="social text-bgdark hover:text-twitter" />
                   </a>
                   <a
-                    href="https://www.upwork.com/freelancers/~017cbda16d97800889"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <SiUpwork className="social text-bgdark hover:text-upwork" />
-                  </a>
+                  href="https://github.com/yaser55v"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaGithub className="social text-bgdark hover:text-github" />
+                </a>
                  
                 </div>
               </div>

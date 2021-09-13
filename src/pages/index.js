@@ -10,7 +10,7 @@ import Seo from "../components/seo"
 const HomePage = () => {
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="Yasser" />
       <Projects />
       <About />
       <Contact />
