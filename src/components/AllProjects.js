@@ -37,7 +37,7 @@ const AllProjects = ({ isOpen }) => {
                   />
                 </a>
               </div>
-              <div className="flex flex-col sm:items-center capitalize">
+              <div className="flex flex-col capitalize">
                 <p className="text-lg font-bold">{title}</p>
                 <div className="flex flex-wrap items-center justify-center space-x-3 py-4">
                   {tags.map((tag, index) => {
