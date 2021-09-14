@@ -28,7 +28,7 @@ const AllProjects = ({ isOpen }) => {
               key={id}
               className="transition duration-300 transform rounded shadow-lg lg:hover:scale-105 hover:shadow-2xl bg-xLight bg-opacity-50 pb-4"
             >
-              <div className="relative mb-4">
+              <div className="relative mb-4 ">
                 <a href={link} target="_blank" rel="noreferrer">
                   <GatsbyImage
                     className="absolute object-cover w-full h-full rounded-t"
@@ -37,7 +37,7 @@ const AllProjects = ({ isOpen }) => {
                   />
                 </a>
               </div>
-              <div className="flex flex-col sm:text-center capitalize">
+              <div className="flex flex-col sm:items-center capitalize">
                 <p className="text-lg font-bold">{title}</p>
                 <div className="flex flex-wrap items-center justify-center space-x-3 py-4">
                   {tags.map((tag, index) => {
