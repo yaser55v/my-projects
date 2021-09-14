@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         bgLight: '#f5cca3',
         bgdark: '#dba469 ',
+        xLight: '#ffe8d1',
         bgProject: '#d6985b',
         facebook: '#3b5998',
         linkedin: '#0e76a8',
@@ -37,5 +38,7 @@ module.exports = {
       transitionDuration: ['active'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

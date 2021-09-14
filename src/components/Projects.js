@@ -12,7 +12,7 @@ import SwiperCore, {
 } from "swiper/core"
 
 SwiperCore.use([Navigation, Pagination, EffectFade, Parallax, Autoplay])
-const Projects = () => {
+const Projects = ({toggles, isOpen}) => {
   const data = useStaticQuery(query)
   const projects = data.allContentfulProject.nodes
   return (
@@ -144,7 +144,11 @@ const Projects = () => {
               })}
             </Swiper>
           </div>
-    {/*       <button>butoon x</button> */}
+          <div className="flex justify-center">
+          <button onClick={toggles} className="items-center mt-12 justify-center py-3 px-8 font-medium tracking-wide text-bgdark transition duration-200 rounded shadow-md bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50">
+            {!isOpen ? 'See More' : 'See less'}
+          </button>
+          </div>
         </div>
       </div>
     </>
@@ -155,7 +159,7 @@ export default Projects
 
 const query = graphql`
   {
-    allContentfulProject(sort: {fields: idx, order: DESC})  {
+    allContentfulProject(limit: 4, sort: {fields: idx, order: DESC}) {
       nodes {
         id
         title
