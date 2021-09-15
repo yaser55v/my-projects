@@ -10,9 +10,22 @@ module.exports = {
     author: 'Yasser Mahmoud'
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-PZVPMCD4XC",
+
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-anchor-links`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

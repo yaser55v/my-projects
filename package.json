@@ -17,6 +17,7 @@
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "gatsby": "^3.11.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
+    "gatsby-plugin-google-gtag": "^3.13.0",
     "gatsby-plugin-image": "^1.11.0",
     "gatsby-plugin-purgecss": "^6.0.2",
     "gatsby-plugin-react-helmet": "^4.11.0",
