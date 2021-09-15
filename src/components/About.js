@@ -36,26 +36,26 @@ const About = () => {
           </p>
           <div className="grid space-y-3 sm:gap-2 sm:grid-cols-2 sm:space-y-0 text-bgdark">
             <ul className="space-y-3">
-              <li className="flex">
+              <li className="flex items-center">
                 <span className="mr-4 flex">
                   <IoLogoHtml5 />
                   <IoLogoCss3 />
                 </span>
                 HTML & CSS
               </li>
-              <li className="flex">
+              <li className="flex items-center">
                 <span className="mr-4">
                   <FaSass />
                 </span>
                 SASS
               </li>
-              <li className="flex">
+              <li className="flex items-center">
                 <span className="mr-4">
                   <FaBootstrap />
                 </span>
                 BOOTSTRAP
               </li>
-              <li className="flex">
+              <li className="flex items-center">
                 <span className="mr-4">
                   <SiTailwindcss />
                 </span>
@@ -63,25 +63,25 @@ const About = () => {
               </li>
             </ul>
             <ul className="space-y-3">
-              <li className="flex">
+              <li className="flex items-center">
                 <span className="mr-4">
                   <IoLogoJavascript />
                 </span>
                 JAVASCRIPT
               </li>
-              <li className="flex">
+              <li className="flex items-center">
                 <span className="mr-4">
                   <FaReact />
                 </span>
                 REACT
               </li>
-              <li className="flex">
+              <li className="flex items-center">
                 <span className="mr-4">
                   <GrGatsbyjs />
                 </span>
                 GATSBY.JS
               </li>
-              <li className="flex">
+              <li className="flex items-center">
                 <span className="mr-4">
                   <IoLogoGithub />
                 </span>
