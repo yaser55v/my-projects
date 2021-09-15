@@ -44,11 +44,11 @@ const Projects = ({ toggles, isOpen }) => {
               pagination={{
                 clickable: true,
               }}
-            /*   autoplay={{
+              autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
-              }} */
+              }}
               navigation={false}
               speed={1200}
               parallax={true}
