@@ -1,23 +1,19 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
 module.exports = {
-
   siteMetadata: {
-    title: 'Freelance front end developer',
-    description: 'Yasser Mahmoud Freelance front end developer',
-    author: 'Yasser Mahmoud'
+    title: "Freelance front end developer",
+    description: "Yasser Mahmoud Freelance front end developer",
+    author: "Yasser Mahmoud",
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          "G-PZVPMCD4XC",
-
-        ],
+        trackingIds: process.env.GA_TRACKING_ID,
         pluginConfig: {
           head: true,
         },
