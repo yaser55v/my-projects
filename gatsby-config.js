@@ -13,7 +13,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: process.env.GA_TRACKING_ID,
+        trackingIds: [process.env.GA_TRACKING_ID],
         pluginConfig: {
           head: true,
         },
@@ -23,7 +23,6 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
