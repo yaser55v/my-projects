@@ -12,8 +12,9 @@ const AllProjects = ({ isOpen }) => {
           ? "font-body bg-bgProject px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 pb-8"
           : "hidden"
       }
+      
     >
-      <div className="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-3  animate-lazy">
         {allProjects.map(project => {
           const {
             id,

@@ -10,9 +10,10 @@ import SwiperCore, {
   Parallax,
   Autoplay,
 } from "swiper/core"
+import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 
 SwiperCore.use([Navigation, Pagination, EffectFade, Parallax, Autoplay])
-const Projects = ({toggles, isOpen}) => {
+const Projects = ({ toggles, isOpen }) => {
   const data = useStaticQuery(query)
   const projects = data.allContentfulProject.nodes
   return (
@@ -43,17 +44,17 @@ const Projects = ({toggles, isOpen}) => {
               pagination={{
                 clickable: true,
               }}
-              autoplay={{
+            /*   autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
-              }}
+              }} */
               navigation={false}
               speed={1200}
               parallax={true}
               effect={"fade"}
               className="mySwiper"
-              style={{ height: "40rem" }}
+              style={{ height: "30rem" }}
             >
               {projects.map(project => {
                 const {
@@ -84,7 +85,7 @@ const Projects = ({toggles, isOpen}) => {
                           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                             <div className="">
                               <h2
-                                className="mb-4 title text-xl sm:text-4xl text-center lg:text-left font-bold text-bgLight shadow-2xl"
+                                className="mb-4 title text-lg lg:text-4xl text-center lg:text-left font-bold text-bgLight shadow-2xl"
                                 data-swiper-parallax="700"
                               >
                                 {title}
@@ -95,7 +96,7 @@ const Projects = ({toggles, isOpen}) => {
                               >
                                 {description}
                               </p>
-                              <hr className="mb-5 border-bgProject" />
+                              <hr className="mb-0 lg:mb-4 border-bgProject" />
                               <ul className="hidden lg:block">
                                 {tags.map((tag, index) => {
                                   return (
@@ -128,10 +129,10 @@ const Projects = ({toggles, isOpen}) => {
                               >
                                 <GatsbyImage
                                   image={image.gatsbyImageData}
-                                  alt=""
-                                  objectFit="fill"
-                                  style={{ height: "22rem" }}
-                                  className="object-contain rounded w-full shadow-md"
+                                  alt={title}
+                                  objectFit="contain"
+                                  
+                                  className="object-contain  w-full"
                                 />
                               </a>
                             </div>
@@ -145,9 +146,22 @@ const Projects = ({toggles, isOpen}) => {
             </Swiper>
           </div>
           <div className="flex justify-center">
-          <button onClick={toggles} className="items-center mt-12 justify-center py-3 px-8 font-medium tracking-wide text-bgdark transition duration-200 rounded shadow-md bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50">
-            {!isOpen ? 'See More' : 'See less'}
-          </button>
+            <button
+              onClick={toggles}
+              className="items-center mt-12 justify-center py-3 px-8 font-medium tracking-wide text-bgdark transition duration-200 rounded shadow-md bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50"
+            >
+              {!isOpen ? (
+                <span className="flex items-center">
+                  See more
+                  <FaChevronDown className="ml-2" />
+                </span>
+              ) : (
+                <span className="flex items-center">
+                  See less
+                  <FaChevronUp className="ml-2" />
+                </span>
+              )}
+            </button>
           </div>
         </div>
       </div>
@@ -159,7 +173,7 @@ export default Projects
 
 const query = graphql`
   {
-    allContentfulProject(limit: 4, sort: {fields: idx, order: DESC}) {
+    allContentfulProject(limit: 4, sort: { fields: idx, order: DESC }) {
       nodes {
         id
         title

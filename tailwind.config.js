@@ -18,11 +18,13 @@ module.exports = {
         upwork: '#6fda44'
       },
       animation: {
-        'move-light': 'light 10s linear'
+        lazy: "lazy 1s ease-in-out",
       },
-     
-      dropShadow: {
-        'lamp': '10px 20px 50px rgb(255, 174, 25)'
+      keyframes: {
+        lazy: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
       },
       height: {
         exh: "30rem"
