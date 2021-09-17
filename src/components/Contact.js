@@ -1,9 +1,10 @@
 import React from "react"
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
-
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import Img from "../assets/images/contact.jpg"
 
 const Contact = () => {
+  const { t } = useTranslation()
   return (
     <section id="contact" className="font-body">
       <div className="relative">
@@ -29,7 +30,7 @@ const Contact = () => {
                   <span className="relative px-1">
                     <span className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-indigo-600 animate-pulse"></span>
                     <span className="relative inline-block text-bgdark">
-                      CONTACT ME
+                      <Trans>{t("CONTACT ME")}</Trans>
                     </span>
                   </span>
                 </h2>
@@ -68,19 +69,18 @@ const Contact = () => {
                     <FaTwitter className="social text-bgdark hover:text-twitter" />
                   </a>
                   <a
-                  href="https://github.com/yaser55v"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaGithub className="social text-bgdark hover:text-github" />
-                </a>
-                 
+                    href="https://github.com/yaser55v"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaGithub className="social text-bgdark hover:text-github" />
+                  </a>
                 </div>
               </div>
               <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
                 <div className="bg-bgLight rounded shadow-2xl p-7 sm:p-10">
                   <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
-                    Send me a message
+                    <Trans>{t("Send me a message")}</Trans>
                   </h3>
                   <form action="https://formspree.io/f/mrgraeol" method="POST">
                     <div className="mb-1 sm:mb-2">
@@ -88,10 +88,10 @@ const Contact = () => {
                         htmlFor="firstName"
                         className="inline-block mb-1 font-medium"
                       >
-                        Please name
+                        <Trans>{t("Please name")}</Trans>
                       </label>
                       <input
-                        placeholder="Name"
+                        placeholder={t("Name")}
                         required
                         type="text"
                         className="flex-grow w-full h-10 px-4 mb-2 transition duration-200 bg-white  border-gray-100 rounded shadow-sm appearance-none focus:border-bgProject  focus:outline-none border-2 focus:shadow-outline"
@@ -105,10 +105,10 @@ const Contact = () => {
                         htmlFor="email"
                         className="inline-block mb-1 font-medium"
                       >
-                        Your email if you have
+                        <Trans>{t("Your email if you have")}</Trans>
                       </label>
                       <input
-                        placeholder="john.doe@example.org"
+                        placeholder="john.doe@example.com"
                         required
                         type="email"
                         className="flex-grow w-full h-10 px-4 mb-2 transition duration-200 bg-white border-gray-100 rounded shadow-sm appearance-none focus:border-bgProject focus:outline-none border-2 focus:shadow-outline"
@@ -121,7 +121,7 @@ const Contact = () => {
                         htmlFor="lastName"
                         className="inline-block mb-1 font-medium"
                       >
-                        Tell me everything
+                        <Trans>{t("Tell me everything")}</Trans>
                       </label>
                       <textarea
                         required
@@ -135,13 +135,13 @@ const Contact = () => {
                         type="submit"
                         className="inline-flex items-center justify-center w-full h-10 px-6 font-medium tracking-wide text-bgdark transition duration-200 rounded shadow-md bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50"
                       >
-                        Come on go
+                        <Trans>{t("Come on go")}</Trans>
                       </button>
                     </div>
                   </form>
                 </div>
                 <div className="pt-8 text-center text-bgdark xl:text-gray-900">
-                  Made by YASSER MAHMOUD © {new Date().getFullYear()}{" "}
+                  {t("Made by")} YASSER MAHMOUD © {new Date().getFullYear()}{" "}
                   <br className="sm:hidden" />
                   P.IVA: 01753900198
                 </div>

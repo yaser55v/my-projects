@@ -2,7 +2,7 @@ import React from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import SwiperCore, {
   Navigation,
   Pagination,
@@ -14,6 +14,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 
 SwiperCore.use([Navigation, Pagination, EffectFade, Parallax, Autoplay])
 const Projects = ({ toggles, isOpen }) => {
+  const { t } = useTranslation()
   const data = useStaticQuery(query)
   const projects = data.allContentfulProject.nodes
   return (
@@ -21,19 +22,20 @@ const Projects = ({ toggles, isOpen }) => {
       <div id="projects" className="font-body">
         <div className="bg-bgProject px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
-            <h2 className="max-w-lg mb-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none md:mb-6 group">
+            <h2 className="max-w-lg mb-5 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-snug  md:mb-6 group capitalize">
               <span className="relative px-1">
                 <span className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-indigo-600 animate-pulse"></span>
-                <span className="relative inline-block">My Projects</span>
+                <span className="relative inline-block uppercase">
+                <Trans>{t("My Projects")}</Trans>
+                </span>
               </span>
               <br className="" />
-              Simplicity is enough .
+              <Trans>{t("Simplicity is enough.")}</Trans>
               <div className="h-1 ml-auto duration-300 origin-left transform bg-deep-purple-accent-400 scale-x-30 group-hover:scale-x-100" />
             </h2>
             <p className="text-gray-800 text-xl lg:max-w-md italic ">
-              “ Measuring programming progress by lines of code is like
-              measuring aircraft building progress by weight ” –{" "}
-              <span className="font-bold">Bill Gates</span>
+            <Trans>{t("quote")}</Trans>
+              <span className="font-bold"> – Bill Gates</span>
             </p>
           </div>
           <div>
@@ -65,7 +67,7 @@ const Projects = ({ toggles, isOpen }) => {
                   content: { tags },
                   description: { description },
                 } = project
-
+console.log(project);
                 return (
                   <SwiperSlide key={id}>
                     <div className="w-full h-full">
@@ -152,12 +154,12 @@ const Projects = ({ toggles, isOpen }) => {
             >
               {!isOpen ? (
                 <span className="flex items-center">
-                  See more
+                  <Trans>{t("See more")}</Trans>
                   <FaChevronDown className="ml-2" />
                 </span>
               ) : (
                 <span className="flex items-center">
-                  See less
+                  <Trans>{t("See less")}</Trans>
                   <FaChevronUp className="ml-2" />
                 </span>
               )}

@@ -4,7 +4,12 @@ import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
 import { FcStatistics, FcAbout, FcCustomerSupport } from "react-icons/fc"
 import Bounce from "react-reveal/Bounce"
 import Zoom from "react-reveal/Zoom"
+import { Trans, useI18next, useTranslation, Link } from "gatsby-plugin-react-i18next"
+import IT from "../assets/images/it.png"
+import EN from "../assets/images/en.png"
 const Header = () => {
+  const { languages, changeLanguage, originalPath } = useI18next()
+  const { t } = useTranslation()
   return (
     <header className="font-body">
       <div className="mb-16">
@@ -17,7 +22,7 @@ const Header = () => {
                 </h2>
                 <div>
                   <p className="text-base text-gray-700 md:text-3xl ">
-                    Freelance front end developer
+                    <Trans>{t("Front")}</Trans>
                   </p>
                 </div>
               </div>
@@ -54,10 +59,30 @@ const Header = () => {
                 </a>
               </div>
             </Zoom>
+            <div className="flex justify-center">
+              {languages.map(lang => (
+                <button
+                  className="mr-4 mt-8"
+                  key={lang}
+                  onClick={e => {
+                    e.preventDefault()
+                    changeLanguage(lang)
+                  }}
+                >
+                  <Link to={originalPath} language={lang}>
+                  <img
+                    src={lang === "it" ? IT : EN}
+                    alt={lang}
+                    className="w-6 h-6 sm:w-8 sm:h-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-150"
+                  />
+                  </Link>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
         <div className="relative px-4 sm:px-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-bgLight to-bgdark h-1/2" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bgLßight to-bgdark h-1/2" />
           <Bounce top cascade duration={3000}>
             <div className="relative grid mx-auto overflow-hidden bg-transparent divide-y rounded  sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
               <div className="inline-block p-8 text-center bg-gray-700 text-bgLight">
@@ -65,7 +90,9 @@ const Header = () => {
                   <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full ">
                     <FcStatistics className="social " />
                   </div>
-                  <p className="tracking-wide text-bgLight">Projects</p>
+                  <p className="tracking-wide text-bgLight">
+                    <Trans>{t("Projects")}</Trans>
+                  </p>
                 </AnchorLink>
               </div>
               <div className="inline-block p-8 text-center bg-gray-700 ">
@@ -73,7 +100,9 @@ const Header = () => {
                   <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full">
                     <FcAbout className="social " />
                   </div>
-                  <p className="tracking-wide text-bgLight">About Me</p>
+                  <p className="tracking-wide text-bgLight">
+                    <Trans>{t("About Me")}</Trans>
+                  </p>
                 </AnchorLink>
               </div>
 
@@ -82,7 +111,9 @@ const Header = () => {
                   <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full ">
                     <FcCustomerSupport className="social " />
                   </div>
-                  <p className="tracking-wide text-bgLight">Contact</p>
+                  <p className="tracking-wide text-bgLight">
+                    <Trans>{t("Contact")}</Trans>
+                  </p>
                 </AnchorLink>
               </div>
             </div>

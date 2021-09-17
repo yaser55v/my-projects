@@ -5,6 +5,7 @@ import AllProjects from "../components/AllProjects"
 import Contact from "../components/Contact"
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
+import { graphql } from "gatsby"
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,3 +25,17 @@ const HomePage = () => {
 }
 
 export default HomePage
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`
