@@ -52,7 +52,7 @@ module.exports = {
         languages: [`en`, `it`],
         defaultLanguage: `en`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-        siteUrl: `https://example.com/`,
+        siteUrl: `https://www.yassermahmoud.com/`,
         // you can pass any i18next options
         // pass following options to allow message content as a key
         i18nextOptions: {
@@ -64,7 +64,7 @@ module.exports = {
         },
         pages: [
           {
-            matchPath: "/:lang?/blog/:uid",
+            matchPath: "/:lang?/#contact",
             getLanguageFromPath: true,
             excludeLanguages: ["it"],
           },
