@@ -67,7 +67,7 @@ const Projects = ({ toggles, isOpen }) => {
                   content: { tags },
                   description: { description },
                 } = project
-console.log(project);
+
                 return (
                   <SwiperSlide key={id}>
                     <div className="w-full h-full">

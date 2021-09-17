@@ -82,12 +82,12 @@ const Header = () => {
           </div>
         </div>
         <div className="relative px-4 sm:px-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-bgLßight to-bgdark h-1/2" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bgLight to-bgdark h-1/2" />
           <Bounce top cascade duration={3000}>
             <div className="relative grid mx-auto overflow-hidden bg-transparent divide-y rounded  sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
-              <div className="inline-block p-8 text-center bg-gray-700 text-bgLight">
+              <div className="inline-block p-4 sm:p-8 text-center bg-gray-700 text-bgLight">
                 <AnchorLink to="/#projects">
-                  <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full ">
+                  <div className="flex items-center justify-center w-12 h-12 mx-auto mb-0 sm:mb-4 rounded-full ">
                     <FcStatistics className="social " />
                   </div>
                   <p className="tracking-wide text-bgLight">
@@ -95,9 +95,9 @@ const Header = () => {
                   </p>
                 </AnchorLink>
               </div>
-              <div className="inline-block p-8 text-center bg-gray-700 ">
+              <div className="inline-block p-4 sm:p-8 text-center bg-gray-700 ">
                 <AnchorLink to="/#about">
-                  <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full">
+                  <div className="flex items-center justify-center w-12 h-12 mx-auto mb-0 sm:mb-4 rounded-full">
                     <FcAbout className="social " />
                   </div>
                   <p className="tracking-wide text-bgLight">
@@ -106,9 +106,9 @@ const Header = () => {
                 </AnchorLink>
               </div>
 
-              <div className="inline-block p-8 text-center bg-gray-700 text-bgLight">
+              <div className="inline-block p-4 sm:p-8 text-center bg-gray-700 text-bgLight">
                 <AnchorLink to="/#contact">
-                  <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full ">
+                  <div className="flex items-center justify-center w-12 h-12 mx-auto mb-0 sm:mb-4 rounded-full ">
                     <FcCustomerSupport className="social " />
                   </div>
                   <p className="tracking-wide text-bgLight">
