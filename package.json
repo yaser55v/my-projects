@@ -33,7 +33,6 @@
     "react-i18next": "^11.12.0",
     "react-icons": "^4.2.0",
     "react-reveal": "^1.2.2",
-    "sharp": "^0.31.2",
     "swiper": "^6.8.1"
   },
   "devDependencies": {
