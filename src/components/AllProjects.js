@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa"
+
 const AllProjects = ({ isOpen }) => {
   const data = useStaticQuery(query)
   const allProjects = data.allContentfulProject.nodes
@@ -12,7 +12,6 @@ const AllProjects = ({ isOpen }) => {
           ? "font-body bg-bgProject px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 pb-8"
           : "hidden"
       }
-      
     >
       <div className="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-3  animate-lazy">
         {allProjects.map(project => {
@@ -21,25 +20,33 @@ const AllProjects = ({ isOpen }) => {
             title,
             image,
             link,
-            github,
             content: { tags },
           } = project
           return (
-            <div
+            <a
               key={id}
-              className="transition duration-300 transform rounded shadow-lg lg:hover:scale-105 hover:shadow-2xl bg-xLight bg-opacity-50 pb-4"
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              className="block rounded-lg transition duration-300 transform p-4 shadow-lg lg:hover:scale-105 hover:shadow-2xl bg-xLight bg-opacity-50"
             >
-              <div className="relative mb-4 ">
-                <a href={link} target="_blank" rel="noreferrer">
-                  <GatsbyImage
-                    className="absolute object-cover w-full h-full rounded-t"
-                    image={image.gatsbyImageData}
-                    alt={title}
-                  />
-                </a>
-              </div>
-              <div className="flex flex-col items-center capitalize">
-                <p className="text-lg font-bold">{title}</p>
+              <GatsbyImage
+                className="h-56 w-full rounded-md"
+                image={image.gatsbyImageData}
+                alt={title}
+                objectFit="fill"
+              />
+
+              <div>
+                <dl>
+                  <div>
+                    <dt className="sr-only">Project Name</dt>
+                    <dd className="font-bold text-base text-gray-900 text-center mt-4">
+                      {title}
+                    </dd>
+                  </div>
+                </dl>
+
                 <div className="flex flex-wrap items-center justify-center space-x-3 py-4">
                   {tags.map((tag, index) => {
                     return (
@@ -52,26 +59,8 @@ const AllProjects = ({ isOpen }) => {
                     )
                   })}
                 </div>
-                <div className="flex items-center space-x-6 sm:justify-center">
-                  <a
-                    href={link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-gray-900 transition-colors duration-100 hover:text-gray-500"
-                  >
-                    <FaExternalLinkAlt className="h-6 w-6" />
-                  </a>
-                  <a
-                    href={github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-gray-900 transition-colors duration-100 hover:text-gray-500"
-                  >
-                    <FaGithub className="h-6 w-6" />
-                  </a>
-                </div>
               </div>
-            </div>
+            </a>
           )
         })}
       </div>
