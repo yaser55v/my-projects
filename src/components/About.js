@@ -6,7 +6,7 @@ import {
   IoLogoCss3,
   IoLogoGithub,
 } from "react-icons/io"
-import { FaBootstrap, FaReact, FaSass, FaRegLightbulb } from "react-icons/fa"
+import { FaBootstrap, FaReact, FaSass, FaRegLightbulb, FaWordpress } from "react-icons/fa"
 import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import { GrGatsbyjs } from "react-icons/gr"
 import { SiTailwindcss } from "react-icons/si"
@@ -81,9 +81,9 @@ const About = () => {
               </li>
               <li className="flex items-center">
                 <span className="mr-4">
-                  <IoLogoGithub />
+                  <FaWordpress />
                 </span>
-                GITHUB
+                WORDPRESS
               </li>
             </ul>
           </div>
